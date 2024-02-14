@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap" 
+    rel="stylesheet">
+    <!-- <link href="https://fonts.font.im/css?family=Sacramento" rel="stylesheet"> -->
+    <link href="roseStyle.css" rel="stylesheet">
+    <title>Roses</title>
+</head>
+<body>
+    <div class="container">
+        <div class="letter">
+            <p>I wish I were there so you'd have a garden full of flowers</p>
+        </div>
+
+        <div class="rose">
+            <div class="flower">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+            </div>
+            <div class="leaf">
+                <div class="stem"></div>
+                <div class="leafs"></div>
+                <div class="leafs"></div>
+            </div>
+        </div>
+        
+        <div class="letter2">
+            <p>Until then here's one that will last forever</p>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("click", function(event) {
+
+            const roses = document.querySelector('.rose');
+            const newRose = roses.cloneNode(true);
+    
+            const randomX = event.clientX - roses.clientWidth / 12.7;
+            const randomY = event.clientY - roses.clientHeight / 2;
+    
+            newRose.style.left = randomX + "px";
+            newRose.style.top = randomY + "px";
+
+            document.body.appendChild(newRose);
+        });
+    </script>
+
+</body>
+</html>
